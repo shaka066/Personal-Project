@@ -1,0 +1,9 @@
+# VSCode のワークスペース設定ファイルは LF 固定にする
+*.code-workspace text eol=lf
+
+# ソースコードは LF で管理
+*.py     text eol=lf
+*.sh     text eol=lf
+
+# ノートブックやバイナリはそのまま
+*.ipynb binary

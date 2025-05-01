@@ -1,0 +1,7 @@
+# requirements.txt の例（ASCII のコメントはOK）
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+# もし他に必要なら追記

@@ -1,10 +1,106 @@
 {
-	"folders": [
+  "folders": [
     {
-      "path": "../../.."
+      "path": "../Kaggle"
+    },
+    {
+      "path": ".."
     }
   ],
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-toolsai.jupyter",
+      "ms-python.black-formatter",
+      "ms-python.isort",
+      "prettier.prettier-vscode"
+    ]
+  },
   "settings": {
-    "git.ignoreLimitWarning": true
+    // ─── エディタ設定 ─────────────────────
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true, // 保存時に自動フォーマット
+    "editor.rulers": [
+      88
+    ], // 88文字で縦線
+    // ─── Python 設定 ─────────────────────
+    "python.pythonPath": "/usr/bin/python3",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+      "--line-length",
+      "88"
+    ],
+    "python.sortImports.args": [
+      "--profile",
+      "black"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.testing.pytestEnabled": true, // pytest を有効化
+    "python.testing.pytestArgs": [
+      "tests"
+    ],
+    // ─── Jupyter Notebook 固有設定 ────────
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    // ノートブック起動時のカレントディレクトリをワークスペース直下に固定
+    "jupyter.askForKernelRestart": false,
+    // 拡張機能更新後のカーネル再起動確認を自動スキップ
+    "jupyter.variableExplorer.enabled": true,
+    // 選択セルをインタラクティブウィンドウへ送って実行  
+    // → VS Code の Python Interactive Window 機能を活用して、  
+    //    ノートブック形式ではなくエディタ上でもセル実行できる
+    "jupyter.codeActionsOnSave": {
+      "source.organizeImports": true, // 保存時に isort（import 整理）
+      "source.fixAll": true // 保存時に Black 等の自動整形
+    },
+    // ─── ファイル除外 ─────────────────────
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/.ipynb_checkpoints": true
+    },
+    "jupyter.interactiveWindow.textEditor.executeSelection": true
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run File",
+        "type": "shell",
+        "command": "${config:python.pythonPath} ${file}",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "Run pytest",
+        "type": "shell",
+        "command": "${config:python.pythonPath} -m pytest ${workspaceFolder}/tests",
+        "group": "test"
+      }
+    ]
+  },
+  "launch": {
+    "configurations": [
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}"
+      },
+      {
+        "name": "Python: pytest",
+        "type": "python",
+        "request": "launch",
+        "module": "pytest",
+        "args": [
+          "-q"
+        ],
+        "justMyCode": false
+      }
+    ]
   }
 }
