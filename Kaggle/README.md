@@ -7,26 +7,31 @@
 
 ## 🚀 環境構築
 
-新しいコンペを触るときにやること
-環境構築
-Powershellから以下を実行
-PS> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-PS> cd C:\Users\337587\PlayGround\01_Personal\Kaggle
-PS> .\new_comp.ps1 -Name comp_XXXX_XXXX
-新たなコンペフォルダ内のREADME更新
+### 新しいコンペを触るときにやること
+
+### Powershellから以下を実行
+   ```bash
+   PS> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   PS> cd C:\Users\337587\PlayGround\01_Personal\Kaggle
+   PS> .\new_comp.ps1 -Name comp_XXXX_XXXX
+   ```
+### 新たなコンペフォルダ内のREADME更新
 
 1. Python 仮想環境作成
 
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate  # Windows: .venv\Scripts\activate
+   ```
 2. 依存関係インストール
    ```bash
     pip install -U pip
     pip install -r requirements.txt
+   ```
 3. pre-commit フック有効化
    ```bash
     pre-commit install
+   ```
 
 ## 🛠️ VS Code ワークスペース
 
@@ -47,8 +52,9 @@ pytest を採用
 テストは tests/ フォルダに配置
 
 実行コマンド:
-
-pytest -q
+   ```bash
+   pytest -q
+   ```
 ## 📓 Jupyter Notebook
 ノートブックのルートはワークスペース直下に固定
 
