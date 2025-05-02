@@ -4,4 +4,8 @@ pandas
 scikit-learn
 matplotlib
 seaborn
+wandb
+ipykernel
+notebook
+
 # もし他に必要なら追記

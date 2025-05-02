@@ -21,11 +21,11 @@ Push-Location $dest
 
 # 仮想環境作成
 Write-Host "🐍 Creating virtual environment…"
-python -m venv .venv
+python -m venv venv01
 
 # 仮想環境有効化
-Write-Host "🔄 Activating .venv…"
-& .\.venv\Scripts\Activate.ps1
+Write-Host "🔄 Activating virtual environment…"
+& .\venv01\Scripts\Activate.ps1
 
 # pip のアップグレード
 Write-Host "⬆️  Upgrading pip…"

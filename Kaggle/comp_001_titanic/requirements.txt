@@ -4,4 +4,5 @@ pandas
 scikit-learn
 matplotlib
 seaborn
+wandb
 # もし他に必要なら追記
