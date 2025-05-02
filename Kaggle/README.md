@@ -11,9 +11,9 @@
 
 ### Powershellから以下を実行
    ```bash
-   PS> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-   PS> cd C:\Users\337587\PlayGround\01_Personal\Kaggle
-   PS> .\new_comp.ps1 -Name comp_XXXX_XXXX
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   cd C:\Users\337587\PlayGround\01_Personal\Kaggle
+   .\new_comp.ps1 -Name comp_XXXX_XXXX
    ```
 ### 新たなコンペフォルダ内のREADME更新
 

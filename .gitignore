@@ -1,3 +1,11 @@
 .venv/
 venv01/
 venv02/
+venv*/
+
+wandb/
+
+kaggle_secrets.py
+.env
+
+.vscode/
