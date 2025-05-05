@@ -1,12 +1,27 @@
-# requirements.txt の例（ASCII のコメントはOK）
+# === PyTorch CUDA build (cu118) ===
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0+cu118
+torchvision==0.15.2+cu118
+torchaudio==2.1.0+cu118
+
+# === Core libraries ===
 numpy
 pandas
 scikit-learn
 matplotlib
 seaborn
+h5py
+tqdm
+transformers
 wandb
+python-dotenv
+kaggle
+
+# === Jupyter support ===
 ipykernel
 notebook
-python-dotenv
-tqdm
-# もし他に必要なら追記
+
+# === Image matching / SFM ===
+kornia
+git+https://github.com/cvg/LightGlue.git
+pycolmap

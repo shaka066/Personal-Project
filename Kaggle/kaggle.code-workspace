@@ -1,7 +1,10 @@
 {
   "folders": [
     {
-      "path": "../../.."
+      "path": "image-matching-challenge-2025"
+    },
+    {
+      "path": "00_comp_template"
     }
   ],
   "extensions": {
@@ -58,7 +61,8 @@
       "**/.pytest_cache": true,
       "**/.ipynb_checkpoints": true
     },
-    "jupyter.interactiveWindow.textEditor.executeSelection": true
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "git.ignoreLimitWarning": true
   },
   "tasks": {
     "version": "2.0.0",
