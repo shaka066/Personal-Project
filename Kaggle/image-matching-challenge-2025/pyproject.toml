@@ -1,0 +1,18 @@
+[build-system]
+requires      = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imc2025lib"
+version = "0.0.1"
+description = "Common library for Image Matching Challenge 2025 experiments"
+authors = [{ name = "YourName" }]
+readme = "README.md"
+requires-python = ">=3.9"
+
+[tool.setuptools]
+package-dir = {"" = "src"}              # ← 直置きなので src がルート
+py-modules  = [
+  "cfg", "dataset", "features",
+  "matching", "evaluate", "utils"
+]

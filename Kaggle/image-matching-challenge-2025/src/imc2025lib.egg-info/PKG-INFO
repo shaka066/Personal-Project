@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: imc2025lib
+Version: 0.0.1
+Summary: Common library for Image Matching Challenge 2025 experiments
+Author: YourName
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+  ## 🧪 実験管理
+  実験のメタ情報（Notion, Weights & Biases, Kaggle コンペ URL など）は
+  ローカルファイル `urls.local.md` に記載し、こちらを参照してください。
+
+  （`urls.local.md` の例）
+  Notion Workspace: https://www.notion.so/xxxxxxx  
+  WandB Project:        https://wandb.ai/your_user/your_project  
+  Kaggle Comp URL:      https://www.kaggle.com/c/your-competition  
+
+  ⚠️ 注意  
+  - `urls.local.md` はリポジトリに含めず、プライベートに管理  
+  - 公開リポジトリに機密情報を上げないように注意  
+
+urls.local.md:
+  （このファイルには上記の実際の URL を記入。テンプレートからコピーして利用）  
+
+.gitignore:
+  **/urls.local.md
+
+
+  ## WandB 設定
+
+```python
+import wandb
+import os
+from pathlib import Path
+os.environ["WANDB_API_KEY"] = "97eeb9275d80e56848497731f97b46bf6128f62c"
+wanab.login()
+
+project_name = Path.cwd().parents[1].name
+wandb.init(project=f"{project_name}")
+```
